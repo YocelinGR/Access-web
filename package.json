@@ -1,0 +1,22 @@
+{
+  "name": "social-network",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "test": "jest --watch",
+    "pretest": "npm run eslint && npm run htmlhint"
+  },
+  "dependencies": {
+    "@firebase/webchannel-wrapper": "0.2.8",
+    "eslint": "^4.19.1",
+    "firebase-admin": "^5.13.1",
+    "htmlhint": "^0.9.13"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.3",
+    "jest": "^23.4.2"
+  }
+}
