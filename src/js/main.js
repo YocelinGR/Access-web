@@ -1,4 +1,3 @@
-
 window.addEventListener('load',init);
   function init(){
     var video = document.querySelector('#video'), 
@@ -21,13 +20,12 @@ window.addEventListener('load',init);
       });
 
       video.addEventListener('loadedmetadata',function(){
-      	canvas.width = video.videoWidth, 
+      	canvas.width = video.videoWidth,
       	canvas.height = video.videoHeight;},false);
       btn.addEventListener('click',function(){
         canvas.getContext('2d').drawImage(video,0,0);
         var imgData = canvas.toDataURL('image/png');
-        img.setAttribute('filename',imgData);
-
+        img.setAttribute('src',imgData);
       });
 
     }else{
@@ -36,9 +34,4 @@ window.addEventListener('load',init);
     }
 
   }
-  // Bajar cambios
-
-
-
-
 
