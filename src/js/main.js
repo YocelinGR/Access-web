@@ -2,8 +2,9 @@ window.addEventListener('load',init);
   function init(){
     var video = document.querySelector('#video'),
     canvas = document.querySelector('#c'),
-    btn = document.querySelector('#screenshoot'),
+    btnTakephoto = document.querySelector('#screenshoot'),
     img = document.querySelector('#img');
+    download = document.querySelector('#download');
 
     navigator.getUserMedia = (navigator.getUserMedia ||
     	navigator.webkitGetUserMedia ||
@@ -22,10 +23,12 @@ window.addEventListener('load',init);
       video.addEventListener('loadedmetadata',function(){
       	canvas.width = video.videoWidth,
       	canvas.height = video.videoHeight;},false);
-      btn.addEventListener('click',function(){
+      btnTakephoto.addEventListener('click',function(){
         canvas.getContext('2d').drawImage(video,0,0);
         var imgData = canvas.toDataURL('image/png');
         img.setAttribute('src',imgData);
+        img.classList.add('visible')
+        download.href =imgData
 
       });
 
