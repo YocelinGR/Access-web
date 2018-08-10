@@ -32,13 +32,22 @@ const createRegistry = () => {
 	.then(function(docRef) {
 		console.log('Registro de visita');
 		clearRegistry();
-		window.location.assign('../views/success.html');
+		generetePDF();
+		// window.location.assign('../views/success.html');
 	})
 	.catch(function(error) {
 		console.log('Error: no se concreto el registro', error);
 		alert('Error de registro');
 	});
 };
+
+const generetePDF = () => {
+	DB.collection('visitors').onSnapshot((querySnapshot) => {
+		querySnapshot.forEach((doc) => {
+			console.log(`${doc.id} => ${doc.data()}`);
+		});
+	});
+}
 
 buttonRegistry.addEventListener('click', (event) => {
 	createRegistry();
