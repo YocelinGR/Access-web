@@ -3,7 +3,7 @@ let DB = initiaziling();
 let buttonPhoto = document.getElementById('photo');
 let buttonRegistry = document.getElementById('registry');
 
-const soprteDeBrowser = () =>{
+/*const soprteDeBrowser = () =>{
 	return !!(navigator.getUserMedia || (navigator.mozGetUserMedia ||  navigator.mediaDevices.getUserMedia) || navigator.webkitGetUserMedia || navigator.msGetUserMedia)
 }
 // comprueva el servidor
@@ -23,7 +23,7 @@ const takePhoto = () => {
 } else {
 	alert("Lo siento. Tu navegador no soporta esta característica");
 }
-}
+}*/
 const clearRegistry = () => {
 	document.getElementById('full-name').value = '';
 	document.getElementById('email').value = '';
@@ -79,5 +79,5 @@ buttonRegistry.addEventListener('click', (event) => {
 });
 
 buttonPhoto.addEventListener('click', (event) => {
-	takePhoto();
+	window.location.assign("../views/photo.html");
 });
