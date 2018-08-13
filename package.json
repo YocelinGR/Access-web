@@ -1,22 +1,28 @@
 {
-  "name": "social-network",
+  "name": "access-web",
   "version": "1.0.0",
+  "description": "final-common-core",
   "main": "src/index.html",
+  "repository": "https://github.com/YocelinGR/Access-web",
+  "author": "YocelinGR",
   "license": "MIT",
   "scripts": {
-    "htmlhint": "htmlhint src/*.html test/*.html",
-    "eslint": "eslint --ext .js src/ test/",
-    "test": "jest --watch",
-    "pretest": "npm run eslint && npm run htmlhint"
+    "pretest": "eslint src test",
+    "test": "jest --coverage",
+    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --content-base dist/ --mode=development",
+    "lint": "eslint ."
   },
-  "dependencies": {
-    "@firebase/webchannel-wrapper": "0.2.8",
-    "eslint": "^4.19.1",
-    "firebase-admin": "^5.13.1",
-    "htmlhint": "^0.9.13"
-  },
+  "private": null,
   "devDependencies": {
-    "firebase-functions-test": "^0.1.3",
-    "jest": "^23.4.2"
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "jest": "^23.5.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }

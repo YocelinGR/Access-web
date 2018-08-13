@@ -1,5 +1,5 @@
-let notificacion = document.getElementById('notificar');
-notificacion.addEventListener('click', function() {
+const notificacion = document.getElementById('notificar');
+notificacion.addEventListener('click', () => {
   notify();
 });
 
@@ -10,11 +10,11 @@ const notify = () => {
     // Si
   } else if (Notification.permission === 'granted') {
     // lanzar notificación si ya esta autorizado  el servicio
-    let notification = new Notification('Mi primera notificación');
+    const notification = new Notification('Mi primera notificación');
   } else if (Notification.permission !== 'denied') {
     Notification.requestPermission((permission) => {
       if (Notification.permission === 'granted') {
-        let notification = Notification('Hola Mundo !');
+        const notification = Notification('Hola Mundo !');
       }
     });
   }
