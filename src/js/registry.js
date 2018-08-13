@@ -16,6 +16,7 @@ const createRegistry = () => {
   const registryCompany = document.getElementById('company').value;
   const registryHost = document.getElementById('host_name').value;
   const reasonVisit = document.getElementById('reasonVisit').value;
+  const returnBack = document.getElementById('returnBack');
   const date = new Date();
   DB.collection('visitors').add({
     fullNmae: registryName,
@@ -40,4 +41,7 @@ const createRegistry = () => {
 // Eventos de escucha de idUser
 buttonRegistry.addEventListener('click', (event) => {
   createRegistry();
+});
+returnBack.addEventListener('click', (event) => {
+  window.location.assign('../views/keepRegistry.html');
 });

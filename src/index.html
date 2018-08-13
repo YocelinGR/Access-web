@@ -9,27 +9,37 @@
     <meta name="keywords" content="Registro, visitantes, wework, rápido, fácil">
 
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Dosis|Kalam|Lobster|Modern+Antiqua|Pacifico|Permanent+Marker|Playfair+Display" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.brootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/index.css">
   </head>
   <body>
+  <nav class = "navbar-material verdeCheck">
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo left">
+        <img class="responsive-img img-fluid" alt="Responsive image" id="img-logo" src="https://github.com/EstefaniaMolinaa/Access-web/blob/master/src/images/logoverde.png?raw=true" />
+      </a>
+    </div>
+  </nav>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 center-align">
-          <h1>Registrate ahora</h1>
-          <h3>...</h3>
-          <h4>más rápido, más seguro</h4>
+        <div class="col m12 center-align text-center">
+          <h1>Hola, da click para iniciar tu registro</h1>
         </div>
       </div>
     </div>
     <footer id="footer">
-      <div class="col-sm-12 text-center center-align">
-        <a id="registrar" class="btn btn-link btn-lg btn-responsive" href="views/registry.html" role="button">Registrate</a>
+      <div class="col m12 text-center center-align">
+        <a id="registrar" class="btn btn-link btn-lg btn-responsive" href="views/keepRegistry.html" role="button">Iniciar</a>
       </div>
-      <div class="col-sm-12 text-center center-align">
+      <!--<div class="col-sm-12 text-center center-align">
         <a id="admin" class="btn btn-link btn-lg btn-responsive" href="views/viewsAdmin.html" role="button">Administrador</a>
-      </div>
+      </div>-->
     </footer>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+    </script>
   </body>
 </html>

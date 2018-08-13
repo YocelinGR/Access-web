@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Access Check | Seguridad a tu puerta</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plataforma de registro de visitantes para We Works.">
+    <meta name="keywords" content="Registro, visitantes, wework, rápido, fácil">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Dosis|Kalam|Lobster|Modern+Antiqua|Pacifico|Permanent+Marker|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css"/> <!--CDR de firebase-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="row">
+      <div class="input-field col m12">
+        <a href="#" id="returnRegistry"><i class="material-icons Large">navigate_before</i></a>
+      </div>
+    </div>
+    <h2>Termina tu registro</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 center-align">
+          <form id ="registryForm" class="text-center form-group col m12">
+            <section class = "text-center form-group">
+              <div class="row">
+                <div class="input-field col m6">
+                  <input id="full-name" type="text" class="validate">
+                  <label for="full-name">Nombre completo (*)</label>
+                </div>
+              </div>
+                <p>* Campo obligatorio</p>
+              <div class="row">
+                <div class="input-field col m12">
+                  <button class="btn waves-effect waves-light" type="button" name="action" id = "withDate">Continuar
+                  </button>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Librerias y enlaces a archivos js-->
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+              <script src="../js/autentications.js"></script>
+              <script src="../js/withoutRegistry.js"></script>
+              <script type="text/javascript">
+              // Jquery para inputs
+              $(document).ready(function() {
+                M.updateTextFields();
+              });
+              // Jquery para selects
+              $(document).ready(function(){
+                $('select').formSelect();
+              });
+              </script>
+  </body>
+</html>

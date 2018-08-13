@@ -1,4 +1,5 @@
 let storage = firebase.storage();
+let continueNow = document.getElementById('continueNow');
 // Obtenemos todos los elementos que necesitaremos desde el DOM
 let video = document.querySelector('#camera-stream');
 let image = document.querySelector('#snap');
@@ -71,7 +72,7 @@ delete_photo_btn.addEventListener("click", (event) => {
 
 });
 const showVideo = () => {
-  // Mostramos el stream de la webcam 
+  // Mostramos el stream de la webcam
   hideUI();
   video.classList.add("visible");
   controls.classList.add("visible");
@@ -89,7 +90,6 @@ const takeSnapshot = () => {
     context.drawImage(video, 0, 0, width, height);
     // Convertimos la imagen del canvas en datarurl
     let picture = hidden_canvas.toDataURL('image/png');
-    console.log(picture);
     return hidden_canvas.toDataURL('image/png');
   }
 }
@@ -110,3 +110,6 @@ const hideUI = () => {
   snap.classList.remove("visible");
   error_message.classList.remove("visible");
 }
+continueNow.addEventListener('click', (event) => {
+  window.location.assign('../views/success.html');
+});
