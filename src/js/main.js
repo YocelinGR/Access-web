@@ -71,7 +71,7 @@ delete_photo_btn.addEventListener("click", (event) => {
 
 });
 const showVideo = () => {
-  // Mostramos el stream de la webcam y los controles
+  // Mostramos el stream de la webcam 
   hideUI();
   video.classList.add("visible");
   controls.classList.add("visible");
