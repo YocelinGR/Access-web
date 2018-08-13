@@ -1,13 +1,13 @@
 // Variable de firebase
-let DB = initiaziling();
-let userSpace = document.getElementById('userSpace');
-let showUsers = document.getElementById('showUsers');
+const DB = initiaziling();
+const userSpace = document.getElementById('userSpace');
+const showUsers = document.getElementById('showUsers');
 const show = () => {
   userSpace.innerHTML = '';
   let templetes = '';
   DB.collection('visitors').onSnapshot((querySnapshot) => {
-		querySnapshot.forEach((doc) => {
-    templetes += `<div class="card">
+    querySnapshot.forEach((doc) => {
+      templetes += `<div class="card">
     <div class="card-image waves-effect waves-block waves-light center-align">
       <img class="activator" src="../image/user.png">
     </div>
@@ -24,11 +24,11 @@ const show = () => {
       <p>Proposito: ${doc.data().reasonVisit}</p>
     </div>
   </div>`;
+    });
+    userSpace.innerHTML = templetes;
   });
-  userSpace.innerHTML = templetes;
-	});
-}
+};
 
 showUsers.addEventListener('click', (event) => {
-	show();
+  show();
 });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Access Web | Seguridad a tu puerta</title>
+    <title>Access Check | Seguridad a tu puerta</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,29 +51,22 @@
                       <label for="host_name">Nombre de quien visita</label>
                     </div>
                   </div>
-                  <div class="row">
                     <div class="input-field col m12">
-                      <input id="reason_visit" type="text" class="validate">
-                      <label for="reason_visit">Motivo de visita</label>
+                      <form name = "formul">
+                        <select id ="reasonVisit" name = "selectReason">
+                          <option value="" disabled selected>Elija una motivo</option>
+                          <option value="Junta">Junta</option>
+                          <option value="Entrevista">Entrevista</option>
+                          <option value="SoporteTecnico">Soporte Técnico</option>
+                          <option value="Proveedor">Proveedor</option>
+                          <option value="Personal">Personal</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                      </form>
                     </div>
-                  </div>
                   <div class="row">
                     <div class="input-field col m12">
-                      <button class="btn waves-effect waves-light" type="button" name="action" id = "photo">Toma foto
-                        <i class="material-icons right">camera_enhance</i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col m12">
-                      <button class="btn waves-effect waves-light" type="button" name="action" id = "notificar">Enviar Notificacion
-                        <i class="material-icons right">add_alert</i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col m12">
-                      <button class="btn waves-effect waves-light" type="button" name="action" id = "registry">Finaliza el registro
+                      <button class="btn waves-effect waves-light" type="button" name="action" id = "registry">Guardar datos
                         <i class="material-icons right">archive</i>
                       </button>
                     </div>
@@ -89,7 +82,6 @@
               <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
               <script src="../js/autentications.js"></script>
               <script src="../js/registry.js"></script>
-              <script src="../js/notificacion.js"></script>
               <script type="text/javascript">
               // Jquery para inputs
               $(document).ready(function() {
