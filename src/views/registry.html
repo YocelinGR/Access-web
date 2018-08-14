@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Access Web | Seguridad a tu puerta</title>
+    <title>Access Check | Seguridad a tu puerta</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,38 +9,91 @@
     <meta name="keywords" content="Registro, visitantes, wework, rápido, fácil">
 
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Dosis|Kalam|Lobster|Modern+Antiqua|Pacifico|Permanent+Marker|Playfair+Display" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://stackpath.brootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-    crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css"/> <!--CDR de firebase-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
+    <div class="row">
+      <div class="input-field col m12">
+        <a href="#" id="returnBack"><i class="material-icons Large">navigate_before</i></a>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-sm-12 center-align">
           <h3>Registrate ahora</h3>
-              <form id ="registryForm" class="text-center form-group col s12">
+              <form id ="registryForm" class="text-center form-group col m12">
                 <p>Ingrese sus datos por favor</p>
                 <section class = "text-center form-group">
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Nombre completo</label>
+                  <div class="row">
+                    <div class="input-field col m6">
+                      <input id="full-name" type="text" class="validate">
+                      <label for="full-name">Nombre completo</label>
+                    </div>
                   </div>
-
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="input-field col m12">
+                    <form name = "formul">
+                      <select id ="company" name = "selectCompany">
+                        <option value="" disabled selected>Elija una empresa</option>
+                        <option value="Laboratoria">Laboratoria</option>
+                        <option value="ManagmentSolutions">Managment Solutions</option>
+                        <option value="SPS">SP Solutions</option>
+                        <option value="Enapsys">Enapsys</option>
+                      </select>
+                    </form>
+                    <label>Empresa que visita</label>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <input id="host_name" type="text" class="validate">
+                      <label for="host_name">Nombre de quien visita</label>
+                    </div>
+                  </div>
+                    <div class="input-field col m12">
+                      <form name = "formul">
+                        <select id ="reasonVisit" name = "selectReason">
+                          <option value="" disabled selected>Elija una motivo</option>
+                          <option value="Junta">Junta</option>
+                          <option value="Entrevista">Entrevista</option>
+                          <option value="SoporteTecnico">Soporte Técnico</option>
+                          <option value="Proveedor">Proveedor</option>
+                          <option value="Personal">Personal</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                      </form>
+                    </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <button class="btn waves-effect waves-light" type="button" name="action" id = "registry">Continuar
+                      </button>
+                    </div>
+                  </div>
               </form>
         </div>
       </div>
     </div>
 
     <!--Librerias y enlaces a archivos js-->
-              <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
               <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-              <script src="../js/authentications.js"></script>
+              <script src="../js/autentications.js"></script>
               <script src="../js/registry.js"></script>
               <script type="text/javascript">
+              // Jquery para inputs
               $(document).ready(function() {
                 M.updateTextFields();
+              });
+              // Jquery para selects
+              $(document).ready(function(){
+                $('select').formSelect();
               });
               </script>
 
