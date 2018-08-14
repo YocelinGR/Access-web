@@ -27,7 +27,7 @@ const print = () => {
           <td>${doc.data().reasonVisit}</td>
           <td>${doc.data().cita}</td>
           <td>${doc.data().citaOut}</td>
-          <td><button class = "btn" onclick = "editOut('${doc.id}')">Salida</button></td>
+          <td><button class = "btn" onclick = "editOut('${doc.id}','${doc.data()}')">Salida</button></td>
           </tr>
         </tbody>
       </table>`;
@@ -35,10 +35,32 @@ const print = () => {
   });
 };
 
-const editOut = (id) => {
+
+const editOut = (id, data) => {
   let btn = document.getElementByClassName('btn');
-  bootstrapcdn.onclick = () =>{
-    let dataOit = new Date();
-    
-  }
-}
+  btn.onclick = () =>{
+    let dataOut = new Date();
+    let userEdited = DB.collection('visitors').doc(id);
+    return userEdited.update({
+      fullNmae: doc.data().registryName,
+      email: doc.data().registryEmail,
+      company: doc.data().registryCompany,
+      host: doc.data().registryHost,
+      reasonVisit: doc.data().reasonVisit,
+      cita: doc.data().date,
+      citaOut: dataOut
+    })
+    .then(function() {
+        console.log('Document successfully updated!');
+        btn.innerHTML = 'Guardado';
+      })
+      .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error('Error updating document: ', error);
+      });
+  };
+};
+let start = document.getElementById('start');
+start.addEventListener('click', (event) => {
+  print();
+});

@@ -23,7 +23,7 @@ const createRegistry = () => {
     email: registryEmail,
     company: registryCompany,
     host: registryHost,
-    reasonVisit,
+    reasonVisit : reasonVisit,
     cita: date,
     citaOut: ''
   })
