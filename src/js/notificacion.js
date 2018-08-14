@@ -1,3 +1,4 @@
+
 // prueba 
  console.log("todo va bien");
  
@@ -17,6 +18,7 @@ myform.submit(function(event){
     }, function(err) {
        alert("Hubo un error vuelve a intentar!");
        myform.find("button").text("No pudo ser enviado");
+
     });
   return false;
 });
