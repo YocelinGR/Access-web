@@ -25,6 +25,7 @@ const createRegistry = () => {
     host: registryHost,
     reasonVisit,
     cita: date,
+    citaOut: ''
   })
     .then((docRef) => {
       console.log('Registro de visita');
