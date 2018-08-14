@@ -1,7 +1,26 @@
 .verdeCheck{
   background-color: #99e265;
 }
+h1{
+  font-family: 'Biryani', sans-serif;
+  margin-top: 20%;
+}
+
 #img-logo {
   padding-top: 50px;
   margin-top: 30px;
+}
+.img{
+    margin-top: 10%;
+    display:block;
+    margin:auto;
+}
+.btn-large{
+  background-color: #35b729;
+  margin-top: 12%;
+  width: 300px;
+  height: 70px;
+}
+.boton{
+  font-size: 2em;
 }
