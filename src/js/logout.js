@@ -55,7 +55,7 @@ const editOut = (id, data) => {
         btn.innerHTML = 'Guardado';
       })
       .catch(function(error) {
-        // The document probably doesn't exist.
+        // The document probably doesn't exist
         console.error('Error updating document: ', error);
       });
   };
