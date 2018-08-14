@@ -1,21 +1,24 @@
-const notificacion = document.getElementById('notificar');
-notificacion.addEventListener('click', () => {
-  notify();
-});
 
-const notify = () => {
-  // Verifica que el navegador soporta notificaciones, creando un alert en caso de que no lo soporte
-  if (!('Notification' in window)) {
-    alert('Tu navegador no soporta notificaciones');
-    // Si
-  } else if (Notification.permission === 'granted') {
-    // lanzar notificación si ya esta autorizado  el servicio
-    const notification = new Notification('Mi primera notificación');
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission((permission) => {
-      if (Notification.permission === 'granted') {
-        const notification = Notification('Hola Mundo !');
-      }
+// prueba 
+ console.log("todo va bien");
+ 
+ let myform = $("form#myform");
+myform.submit(function(event){
+  event.preventDefault();
+
+  // credenciales de servicio emailjs
+  let service_id = "default_service";
+  let template_id = "template_bPMxch99";
+  //evento del boton 
+  myform.find("button").text("Enviando...");
+  emailjs.sendForm(service_id,template_id,"myform")
+    .then(function(){ 
+      alert("La notificación se envio correctamente!");
+       myform.find("button").text("Enviado");
+    }, function(err) {
+       alert("Hubo un error vuelve a intentar!");
+       myform.find("button").text("No pudo ser enviado");
+
     });
-  }
-};
+  return false;
+});
