@@ -28,7 +28,7 @@ const createRegistry = () => {
   })
     .then((docRef) => {
       console.log('Registro de visita');
-	  const idUser = docRef.id;
+    const idUser = docRef.id;
       console.log(idUser);
       clearRegistry(idUser);
       //window.location.assign('../views/success.html');
