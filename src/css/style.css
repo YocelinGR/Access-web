@@ -1,4 +1,4 @@
-*{
+*{  /* Define cómo se calculan el ancho y la altura de un elemento-> Cuadrado sin bordes*/
     box-sizing: border-box;
     margin: 0;
     padding: 0;
